@@ -1,4 +1,4 @@
-package Entitys;
+package com.fraerboll.blog_api.entity;
 
 import jakarta.persistence.*;
 
@@ -16,7 +16,7 @@ public class Post {
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user.id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Post() {

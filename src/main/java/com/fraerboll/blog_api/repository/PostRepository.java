@@ -1,6 +1,6 @@
-package repository;
+package com.fraerboll.blog_api.repository;
 
-import Entitys.Post;
+import com.fraerboll.blog_api.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

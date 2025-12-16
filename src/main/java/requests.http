@@ -1,0 +1,65 @@
+### ============================================
+### 1. ТЕСТОВЫЕ ЭНДПОЙНТЫ (создай их для проверки)
+### ============================================
+
+### Простейший тест - должен работать ВСЕГДА
+GET http://localhost:8080/api/health
+Accept: application/json
+
+### Тест контроллера постов
+GET http://localhost:8080/api/posts/test
+Accept: application/json
+
+### ============================================
+### 2. СОЗДАНИЕ ТЕСТОВЫХ ДАННЫХ
+### ============================================
+
+### Быстрое создание тестового пользователя (добавь этот метод)
+POST http://localhost:8080/api/users/create-test
+Content-Type: application/json
+
+{
+  "username": "kirill",
+  "email": "kirill@test.com"
+}
+
+### Быстрое создание тестового поста (без DTO)
+POST http://localhost:8080/api/posts/create-test
+Content-Type: application/json
+
+{
+  "title": "Тестовый пост",
+  "content": "Содержимое для теста"
+}
+
+### ============================================
+### 3. РАБОТА С API (основные эндпоинты)
+### ============================================
+
+### Получить все посты
+GET http://localhost:8080/api/posts
+Accept: application/json
+
+### Создать пост (полная версия с userId)
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "title": "Мой первый пост",
+  "content": "Содержимое поста",
+  "userId": 1
+}
+
+### ============================================
+### 4. АЛЬТЕРНАТИВНЫЕ ВАРИАНТЫ (если основное не работает)
+### ============================================
+
+### GET с параметрами (самый простой вариант)
+GET http://localhost:8080/api/posts/simple
+Accept: application/json
+
+### POST с form-data (работает без JSON)
+POST http://localhost:8080/api/posts/form
+Content-Type: application/x-www-form-urlencoded
+
+title=Пост через форму&content=Работает без JSON

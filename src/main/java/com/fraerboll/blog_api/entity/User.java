@@ -1,4 +1,4 @@
-package Entitys;
+package com.fraerboll.blog_api.entity;
 
 import jakarta.persistence.*;
 
